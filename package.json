@@ -1,0 +1,23 @@
+{
+  "name": "node-proxy",
+  "version": "1.0.0",
+  "description": "Node.js server reverse proxy",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoyTimes/node-proxy.git"
+  },
+  "author": "RoyTimes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoyTimes/node-proxy/issues"
+  },
+  "homepage": "https://github.com/RoyTimes/node-proxy#readme",
+  "dependencies": {
+    "http-proxy": "^1.12.0"
+  }
+}
