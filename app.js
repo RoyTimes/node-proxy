@@ -1,9 +1,8 @@
 var http = require ('http');
 var httpproxy = require ('http-proxy');
+var config = require ('./config.json');
 
-var proxy = httpproxy.createProxyServer({
-
-});
+var proxy = httpproxy.createProxyServer({});
 
 proxy.on ('error', function (err, req, res) {
 	res.writeHead (500, {
@@ -13,30 +12,26 @@ proxy.on ('error', function (err, req, res) {
 });
 
 var server = require ('http').createServer(function (req, res) {
-	var host = req.headers.host, ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+	var host = req.headers.host, ip = req.headers['x-forwarded-for'] 
+		|| req.connection.remoteAddress;
 	console.log("client ip:" + ip + ", host:" + host);
 
-	switch (host) {
-		case 'stzone.org':
-		case 'www.stzone.org':
-			proxy.web (req, res, {
-				target: 'http://localhost:4567'});
-			break;
+	if (config[host]) {
+		if (config[host].target) {
+			
+			proxy.web(req, ers, { target: config[host].target });
+		}
+		else if (config[host].redirect){
+			res.writeHead(302,{Location: config[host].redirect});
+			res.end();
+		}
 
-		case 'deploy.skye.kiwi':
-			proxy.web (req, res, {
-				target: 'http://localhost:7777'});
-			break;
-
-		default:
-			res.writeHead(200, {
-				    'Content-Type': 'text/plain'
-			});
-			res.end('Welcome!');
+	} else {
+		res.writeHead(200, {   
+			'Content-Type': 'text/plain'
+		});
+		res.end('Welcome!');
 	}
-
-
-
 });
 
 console.log("listening on port 80")
