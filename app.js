@@ -22,7 +22,7 @@ var server = require ('http').createServer(function (req, res) {
 			proxy.web(req, res, { target: config[host].target });
 		}
 		else if (config[host].redirect){
-			res.writeHead(302,{Location: config[host].redirect});
+			res.redirect(config[host].redirect);
 			res.end();
 		}
 
