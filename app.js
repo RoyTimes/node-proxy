@@ -19,7 +19,7 @@ var server = require ('http').createServer(function (req, res) {
 	if (config[host]) {
 		if (config[host].target) {
 			
-			proxy.web(req, ers, { target: config[host].target });
+			proxy.web(req, res, { target: config[host].target });
 		}
 		else if (config[host].redirect){
 			res.writeHead(302,{Location: config[host].redirect});
