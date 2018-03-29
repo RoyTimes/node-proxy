@@ -11,7 +11,8 @@ proxy.on ('error', function (err, req, res) {
 	res.end('Server down. We will be back in a momment');
 });
 
-var server = require ('http').createServer(function (req, res) {
+var server = require('express')();
+server.use((req, res) => {
 	var host = req.headers.host, ip = req.headers['x-forwarded-for'] 
 		|| req.connection.remoteAddress;
 	console.log("client ip:" + ip + ", host:" + host);
