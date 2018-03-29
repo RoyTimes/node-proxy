@@ -1,42 +1,42 @@
 {
     "blog.ziorix.com": {
-        "target": "http: //localhost:8081"
+        "target": "http://localhost:8081"
     },
     "ziorix.com": {
-        "target": "http: //localhost:8081"
+        "target": "http://localhost:8081"
     },
     "www.ziorix.com": {
-        "target": "http: //localhost:8081"
+        "target": "http://localhost:8081"
     },
 
     "invest.ponder.capital": {
-        "redirect": "https://app.pipefy.com/public/form/Cn2PLwE9"
+        "redirect": "https//app.pipefy.com/public/form/Cn2PLwE9"
     }, 
 
     "blog.ponder.capital": {
-        "target": "http: //localhost:8888"
+        "target": "http://localhost:8888"
     },
 
     "skye.kiwi": {
-        "target": "http: //localhost:8087"
+        "target": "http://localhost:8087"
     },
     "www.skye.kiwi": {
-        "target": "http: //localhost:8087"
+        "target": "http://localhost:8087"
     },
 
     "opensourceuw.org": {
-        "target": "http: //localhost:5000"
+        "target": "http://localhost:5000"
     },
     
     "insights.skye.kiwi": {
-        "target": "http: //localhost:3001"
+        "target": "http://localhost:3001"
     },
     "blog.skye.kiwi": {
-        "target": "http: //localhost:3001"
+        "target": "http://localhost:3001"
     },
 
 
     "api.skye.kiwi": {
-        "target": "http: //localhost:3000"
+        "target": "http://localhost:3000"
     }
 }
